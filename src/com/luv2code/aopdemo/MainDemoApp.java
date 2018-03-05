@@ -1,5 +1,7 @@
 package com.luv2code.aopdemo;
 
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.luv2code.aopdemo.dao.AccountDAO;
@@ -35,8 +37,13 @@ public class MainDemoApp {
 		String name = theAccountDAO.getName();
 		String code = theAccountDAO.getServiceCode();
 	
+		// surnames turn into uppercase by our advice.
+		List<Account> accounts = theAccountDAO.findAccounts();
 		
-		theAccountDAO.findAccounts();
+		// printing uppercase names
+		for(Account a : accounts) {
+			System.out.println(a.getName());
+		}
 		
 		// close the context
 		context.close();
