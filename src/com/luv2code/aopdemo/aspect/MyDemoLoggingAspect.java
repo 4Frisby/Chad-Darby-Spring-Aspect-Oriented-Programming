@@ -12,6 +12,7 @@ public class MyDemoLoggingAspect {
 	
 	// let's start with an @Before advice
 
+	// starts with Account object, ".." means -- > and followed by ANY NUMBER of arguments including just Account.
 	@Before("execution(* add*(com.luv2code.aopdemo.Account, ..))")
 	public void beforeAddAccountAdvice() {
 		
