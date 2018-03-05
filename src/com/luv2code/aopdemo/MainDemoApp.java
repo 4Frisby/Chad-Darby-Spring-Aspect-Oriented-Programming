@@ -34,10 +34,9 @@ public class MainDemoApp {
 
 		String name = theAccountDAO.getName();
 		String code = theAccountDAO.getServiceCode();
+	
 		
-		// call the membership business method
-		theMembershipDAO.addSillyMember();
-		theMembershipDAO.goToSleep();
+		theAccountDAO.findAccounts();
 		
 		// close the context
 		context.close();
