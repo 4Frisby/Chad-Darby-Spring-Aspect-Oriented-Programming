@@ -22,10 +22,6 @@ import com.luv2code.aopdemo.Account;
 @Order(2)
 public class MyDemoLoggingAspect {
 	
-	
-	// 1- we used logger class to synchronize sysout stream and springs console print screen, which if you dont use logger, is different.
-	// 2- by doing this we merged spring component code execution and main code execution, with this every print is executed in order.
-	// 3- logger class is embedded to java
 	private Logger myLogger = Logger.getLogger(getClass().getName());
 	
 	@Around("execution(* com.luv2code.aopdemo.service.*.getFortune(..))")	
@@ -40,7 +36,18 @@ public class MyDemoLoggingAspect {
 		long begin = System.currentTimeMillis();
 		
 		// now, let's execute the method
-		Object result = theProceedingJoinPoint.proceed();
+		Object result = null;
+		
+		try {
+			result = theProceedingJoinPoint.proceed();
+		} catch (Exception e) {
+			// log the exception
+			myLogger.warning(e.getMessage());
+			
+			// give users a custom messagee
+			result = "Major accident! But no worries, "
+					+ "your private AOP helicopter is on the way!";
+		}
 		
 		// get end timestamp
 		long end = System.currentTimeMillis();
