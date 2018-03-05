@@ -17,8 +17,6 @@ public class AccountDAO {
 	
 	public List<Account> findAccounts(boolean tripWire) {
 		
-		int x  = 3 / 0;
-		
 		// for academic purpose ... simulate an exception
 		if (tripWire) {
 			throw new RuntimeException("No soup for you!!!");
