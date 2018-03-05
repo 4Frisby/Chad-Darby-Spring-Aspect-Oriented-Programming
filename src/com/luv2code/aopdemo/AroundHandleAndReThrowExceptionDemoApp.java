@@ -6,10 +6,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.luv2code.aopdemo.service.TrafficFortuneService;
 
-public class AroundHandleExceptionDemoApp {
+public class AroundHandleAndReThrowExceptionDemoApp {
 
 	private static Logger myLogger = 
-					Logger.getLogger(AroundHandleExceptionDemoApp.class.getName());
+					Logger.getLogger(AroundHandleAndReThrowExceptionDemoApp.class.getName());
 			
 	public static void main(String[] args) {
 
