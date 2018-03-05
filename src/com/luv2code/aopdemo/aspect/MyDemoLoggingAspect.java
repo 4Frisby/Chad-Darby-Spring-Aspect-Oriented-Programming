@@ -12,6 +12,8 @@ public class MyDemoLoggingAspect {
 	
 	// let's start with an @Before advice
 
+	//execution (* -- > any return type, com.luv2code.aopdemo.dao -- > in this package, com.luv2code.aopdemo.dao.* -- > in this package any class,
+	// com.luv2code.aopdemo.dao.*.* -- > in this package any classes any method, ".." -- > any number of arguments.
 	@Before("execution(* com.luv2code.aopdemo.dao.*.*(..))")
 	public void beforeAddAccountAdvice() {
 		
